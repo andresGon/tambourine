@@ -36,7 +36,7 @@ h1{
 h1 span, h1 small{
     display: block;
 }
-h1 small, .swiper-slider__col:first-child h3{
+h1 small, .swiper-slider__col:first-child h3, .menus h5{
     font-size: 1rem;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
@@ -45,7 +45,7 @@ h1 small, .swiper-slider__col:first-child h3{
     letter-spacing: 0.35px;
     width: 100%;
 }
-h1>span, .swiper-slider__col:first-child h2{
+h1>span, .swiper-slider__col:first-child h2, .menus h4{
     color: var(--dark);
     font-family: "Cardo", serif;
     font-weight: 500;
@@ -128,6 +128,10 @@ div.swiper-slide {
 .swiper-slider__col{
     background: #ffffff;
 }
+.swiper-slider__col p, .menus-col p{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+}
 .swiper-slider__col:first-child{
     padding: 6vw;
     text-align: left;
@@ -184,4 +188,31 @@ div.swiper-pagination-fraction{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
+}
+/* menus section*/
+.menus{
+    width: var(--mainWidth);
+    display:grid;
+    grid-template-columns: repeat(2, 50%);
+    margin: 0 0 10vh 0;
+}
+.menus img{
+    width: 100%;
+    display: block;
+}
+.menus-col:nth-child(2){
+    text-align: left;
+    padding: 6vw;
+}
+.menus-col h4, .menus-col h5, .menus-col p{
+    margin: 0;
+}
+.menus-col button{
+    border: none;
+    color: var(--bg);
+    background: var(--olive);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
 }
