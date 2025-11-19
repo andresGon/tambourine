@@ -131,6 +131,7 @@ div.swiper-slide {
 .swiper-slider__col p, .menus-col p{
     font-family: "Source Sans 3", sans-serif;
     font-weight: 400;
+    line-height: 2.1rem;
 }
 .swiper-slider__col:first-child{
     padding: 6vw;
@@ -201,11 +202,17 @@ div.swiper-pagination-fraction{
     display: block;
 }
 .menus-col:nth-child(2){
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
     text-align: left;
     padding: 6vw;
 }
 .menus-col h4, .menus-col h5, .menus-col p{
     margin: 0;
+}
+.menus-col h4{
+    padding: 6% 0;
 }
 .menus-col button{
     border: none;
@@ -215,4 +222,5 @@ div.swiper-pagination-fraction{
     font-weight: 500;
     padding: 1rem 2rem;
     text-transform: uppercase;
+    margin: 6% 0 0 0;
 }
