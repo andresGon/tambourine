@@ -65,7 +65,7 @@ h1>span>span{
     display:flex;
     justify-content:center;
     flex-flow: column;
-    width: 1171px;
+    width: 74vw;
     padding: 10vh 0 0 0;
 }
 .amenities ul{
@@ -92,4 +92,16 @@ h1>span>span{
 .amenities ul li::marker{
     color: var(--olive);
     font-size: 1rem;
+}
+/* section slider*/
+section.slider{
+    width: 100%;
+    height: 50vh;
+    margin: 10vh;
+    background: var(--olive);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
 }

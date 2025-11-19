@@ -13,3 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleHeading() { heading.classList.toggle('highlight'); }
   };
 });
+
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  loop: true,
+  pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});

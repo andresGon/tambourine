@@ -6,9 +6,15 @@
 	<title>Tambourine | frontEnd test </title>
 	<meta name="description" content="A minimal starter page for the Tambourine project.">
 	<link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </head>
 <body>
 	<main>
+        <!-- amenities section -->
         <section class="amenities">
             <h1>
                 <small>amenities for</small> 
@@ -25,6 +31,28 @@
                 <li>On-Site Audio-Visual Partner</li>
                 <li>Butler-Passed Hors d’oeuvres</li>
             </ul>
+        </section>
+        <!-- slider section -->
+        <section class="slider">
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    ...
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
         </section>
 	</main>
 
