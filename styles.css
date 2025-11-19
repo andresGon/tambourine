@@ -1,0 +1,61 @@
+/* Basic starter styles for Tambourine */
+:root{
+  --bg:#ffffff;
+  --fg:#111827;
+  --accent:#ff6b6b;
+  --muted:#6b7280;
+  --olive:#98A684;
+  --dark:#1B1B1B;
+}
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:var(--fg);
+  font-size: 14px;
+}
+/* google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+main{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  text-align:center;
+}
+/* main title*/
+h1{
+  margin:0 0 0.5rem 0;
+  font-size:clamp(1.5rem,4vw,2.5rem);
+}
+h1 span, h1 small{
+    display: block;
+}
+h1 small{
+    font-size: .9rem;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: var(--olive);
+    letter-spacing: 0.35px;
+}
+h1 span{
+    color: var(--dark);
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4.2rem;
+}
+
+p{color:var(--muted); margin:0 0 1rem 0}
+
+/* section top amenities*/
+.amenities{
+    display:flex;
+    justify-content:center;
+    flex-flow: column;
+    width: 1171px;
+}
