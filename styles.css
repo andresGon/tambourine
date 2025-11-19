@@ -6,6 +6,7 @@
   --muted:#6b7280;
   --olive:#98A684;
   --dark:#1B1B1B;
+  --mainWidth:80vw;
 }
 *{box-sizing:border-box}
 html,body{
@@ -35,7 +36,7 @@ h1{
 h1 span, h1 small{
     display: block;
 }
-h1 small{
+h1 small, .swiper-slider__col:first-child h3{
     font-size: 1rem;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
@@ -44,7 +45,7 @@ h1 small{
     letter-spacing: 0.35px;
     width: 100%;
 }
-h1>span{
+h1>span, .swiper-slider__col:first-child h2{
     color: var(--dark);
     font-family: "Cardo", serif;
     font-weight: 500;
@@ -65,7 +66,7 @@ h1>span>span{
     display:flex;
     justify-content:center;
     flex-flow: column;
-    width: 74vw;
+    width: var(--mainWidth);
     padding: 10vh 0 0 0;
 }
 .amenities ul{
@@ -96,12 +97,91 @@ h1>span>span{
 /* section slider*/
 section.slider{
     width: 100%;
-    height: 50vh;
+    height: 46vw;
     margin: 10vh;
-    background: var(--olive);
+    background:url(./images/landscape.jpg);
+    background-size: cover;
+    position: relative;
 }
-
 .swiper {
   width: 100%;
   height: 100%;
+  background-color: rgba(152, 166, 132, 0.8);
+}
+div.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-scrollbar{
+    display: none;
+}
+.swiper-slider__content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: var(--mainWidth);
+}
+.swiper-slider__content img{
+    width: 100%;
+    display: block;
+}
+.swiper-slider__col{
+    background: #ffffff;
+}
+.swiper-slider__col:first-child{
+    padding: 6vw;
+    text-align: left;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.swiper-slider__col:first-child h3, .swiper-slider__col:first-child p{
+    margin: 0;
+}
+div.swiper-slider__col:first-child h2{
+    justify-content: flex-start;
+    margin: 1rem 0;
+}
+div.swiper-pagination-fraction{
+    color: var(--bg);
+    font-family: "Cardo", serif;
+    font-weight: 500;
+    font-size: 14.2rem;
+    width: auto;
+    right: 11vw;
+    left: inherit;
+    top: inherit;
+    bottom: 3.4vw;
+}
+.slider-nav{
+    position: absolute;
+    z-index: 2;
+    bottom: 6vw;
+    right: 52%;
+    display: flex;
+    gap: 10px;
+}
+.custom-prev, .custom-next{
+    z-index: 1;
+    width: 60px;
+    height: 6px;
+    
+    cursor: pointer;
+    opacity: 0.5;
+    transition: .3s;
+}
+.custom-prev:hover, .custom-next:hover{
+    opacity: 1;
+}
+
+.custom-prev{
+    background: url(./images/prev.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.custom-next{
+    background: url(./images/next.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
 }
