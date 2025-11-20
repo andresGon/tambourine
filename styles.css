@@ -209,6 +209,23 @@ div.swiper-pagination-fraction{
     display:grid;
     grid-template-columns: repeat(2, 50%);
     margin: 0 0 10vh 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+.menus.if-visible {
+    visibility: visible;
+}
+.menus.if-visible .menus-col:nth-child(1){
+    animation-duration: .6s;
+    animation-fill-mode: both;
+    animation-name: fadeInLeft;
+
+}
+.menus.if-visible .menus-col:nth-child(2){
+    animation-duration: .6s;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;
+
 }
 .menus img{
     width: 100%;
@@ -249,32 +266,13 @@ div.swiper-pagination-fraction{
     section.slider{
         height: 60vw;
     }
+    .slider-nav{
+        bottom: 10vw;
+    }
     div.swiper-pagination-fraction{
         font-size: 10.2rem;
         right: 4vw;
         bottom: 13vw;
-    }
-}
-/* responsive ipad<*/
-@media screen and (max-width: 767px){
-    .amenities ul{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    section.slider{
-        height: auto;
-        background: none;
-    }
-    .swiper{
-        background-color: #ffffff;
-    }
-    .swiper-slider__content{
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-    }
-    .swiper-slider__col:first-child{
-        padding: 6vw 0;
-        width: var(--mainWidth);
-        margin: auto;
     }
     .menus{
         grid-template-columns: repeat(1, 1fr);
@@ -288,6 +286,37 @@ div.swiper-pagination-fraction{
     .menus-col h4{
         justify-content: flex-start;
     }
+}
+@media screen and (max-width: 850px){
+    .slider-nav{
+        bottom: 8vw;
+    }
+}
+/* responsive ipad<*/
+@media screen and (max-width: 767px){
+    .amenities ul{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    section.slider{
+        height: auto;
+        background: none;
+    }
+    .slider-nav{
+        bottom: 6vw;
+    }
+    .swiper{
+        background-color: #ffffff;
+    }
+    .swiper-slider__content{
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+    .swiper-slider__col:first-child{
+        padding: 6vw 0;
+        width: var(--mainWidth);
+        margin: auto;
+    }
+    
     .custom-prev{
         background: url(./images/prev-white.svg);
         background-size: 200%;

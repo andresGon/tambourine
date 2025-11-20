@@ -72,3 +72,63 @@ document.addEventListener('DOMContentLoaded', function() {
   const observer = new IntersectionObserver(callback, options);
   observer.observe(targetElement);
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // 1. Selecciona todos los elementos con la clase .menu
+  const targetElements = document.querySelectorAll('.menus');
+
+  if (targetElements.length === 0) {
+    console.warn("No se encontraron elementos con la clase '.menu'.");
+    return;
+  }
+
+  // 2. Define las opciones con dos thresholds
+  const options = {
+    root: null, 
+    rootMargin: '0px', 
+    // Los umbrales que disparan el callback:
+    // 0.0: Para detectar cuando sale por completo.
+    // 0.2: Para detectar cuando entra el 20%.
+    threshold: [0.0, 0.2] 
+  };
+
+  // 3. Define la función de callback
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      const element = entry.target;
+      const elementName = element.className; // Para el log
+
+      // A. Lógica para la ADICIÓN (Entrada al 20% o más)
+      // entry.intersectionRatio es la proporción visible (0.0 a 1.0)
+      if (entry.intersectionRatio >= 0.2) {
+        
+        // Verifica si la clase ya existe antes de añadirla para optimizar
+        if (!element.classList.contains('if-visible')) {
+            element.classList.add('if-visible');
+            console.log(`🟢 CLASE AÑADIDA: 'if-visible' a ${elementName} (Visibilidad >= 20%).`);
+        }
+      
+      } 
+      
+      // B. Lógica para la REMOCIÓN (Salida Total)
+      // Verifica si la proporción visible es 0 (ha salido completamente)
+      else if (entry.intersectionRatio === 0) {
+        
+        // Verifica si la clase existe antes de removerla
+        if (element.classList.contains('if-visible')) {
+            element.classList.remove('if-visible');
+            console.log(`🔴 CLASE REMOVIDA: 'if-visible' de ${elementName} (Salida total 0%).`);
+        }
+      }
+    });
+  };
+
+  // 4. Crea la instancia del observador
+  const observer = new IntersectionObserver(callback, options);
+
+  // 5. Comienza a observar CADA elemento .menu
+  targetElements.forEach(element => {
+    observer.observe(element);
+  });
+});
