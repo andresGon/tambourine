@@ -328,6 +328,24 @@ ul.fade-in-left{
   }
 }
 
+.fade-in-right{
+    animation-duration: .6s;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .fade-in-down{
     animation-duration: .6s;
     animation-fill-mode: both;
