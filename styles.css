@@ -193,6 +193,16 @@ div.swiper-pagination-fraction{
     background-repeat: no-repeat;
     background-position: right;
 }
+.swiper-slide.swiper-slide-active .swiper-slider__content .swiper-slider__col:first-child{
+    animation-duration: .9s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+}
+.swiper-slide.swiper-slide-active .swiper-slider__content .swiper-slider__col:nth-child(2){
+    animation-duration: .9s;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+}
 /* menus section*/
 .menus{
     width: var(--mainWidth);

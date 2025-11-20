@@ -13,6 +13,7 @@ const swiper = new Swiper('.swiper', {
   }
 });
 
+
 document.addEventListener('DOMContentLoaded', function() {
   const targetElement = document.querySelector('.amenities-list');
 
