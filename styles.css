@@ -171,8 +171,7 @@ div.swiper-pagination-fraction{
 .custom-prev, .custom-next{
     z-index: 1;
     width: 60px;
-    height: 6px;
-    
+    height: 20px;
     cursor: pointer;
     opacity: 0.5;
     transition: .3s;
@@ -183,12 +182,13 @@ div.swiper-pagination-fraction{
 
 .custom-prev{
     background: url(./images/prev.svg);
-    background-size: cover;
+    background-size: 200%;
     background-repeat: no-repeat;
+    background-position: left;
 }
 .custom-next{
     background: url(./images/next.svg);
-    background-size: cover;
+    background-size: 200%;
     background-repeat: no-repeat;
     background-position: right;
 }
@@ -251,9 +251,30 @@ div.swiper-pagination-fraction{
     }
     section.slider{
         height: auto;
+        background: none;
+    }
+    .swiper{
+        background-color: #ffffff;
     }
     .swiper-slider__content{
         grid-template-columns: repeat(1, 1fr);
         width: 100%;
+    }
+    .swiper-slider__col:first-child{
+        padding: 6vw 0;
+        width: var(--mainWidth);
+        margin: auto;
+    }
+    .menus{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .menus-col:nth-child(1){
+        grid-row: 2;
+    }
+    .menus-col:nth-child(2){
+        padding: 6vw 0;
+    }
+    .menus-col h4{
+        justify-content: flex-start;
     }
 }
